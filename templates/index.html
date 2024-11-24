@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Diario de Trading</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Diario de Trading</h1>
+        <a href="/registro" class="button">Nueva Operación</a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Tipo</th>
+                <th>Resultado</th>
+                <th>Monto</th>
+            </tr>
+            {% for operacion in operaciones %}
+            <tr>
+                <td>{{ operacion[0] }}</td>
+                <td>{{ operacion[1] }}</td>
+                <td>{{ operacion[2] }}</td>
+                <td>{{ operacion[3] }}</td>
+                <td>{{ operacion[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
